@@ -33,7 +33,7 @@ bot.start((ctx) => {
 app.use(bot.webhookCallback('/bot'));
 app.listen(process.env.PORT, async () => {
   console.log(`Сервер запущен на порту ${process.env.PORT}`);
-  const Url = 'https://dnd20.onrender.com/bot';
+  const Url = 'https://tg-bot-dnd.onrender.com';
   await bot.telegram.setWebhook(Url);
   console.log(`Webhook установлен: ${Url}`);
 });
