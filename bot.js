@@ -17,7 +17,7 @@ bot.start((ctx) => {
         [
           {
             text: 'Открыть d20 🎲',
-            web_app: { url: `${process.env.WEBHOOK_DOMAIN}/d20.html`} 
+            web_app: { url: "https://dnd20.vercel.app"} 
           }
         ]
       ]
@@ -25,15 +25,11 @@ bot.start((ctx) => {
   });
 });
 
-// bot.launch();
-// console.log('Бот запущен');
-
-
 // Подключаем webhook
 app.use(bot.webhookCallback('/bot'));
 app.listen(process.env.PORT, async () => {
   console.log(`Сервер запущен на порту ${process.env.PORT}`);
-  const Url = 'https://tg-bot-dnd.onrender.com';
+  const WebHookUrl = `${process.env.WEBHOOK_DOMAIN}/bot.js`;
   await bot.telegram.setWebhook(Url);
-  console.log(`Webhook установлен: ${Url}`);
+  console.log(`Webhook установлен: ${WebHookUrl}`);
 });
