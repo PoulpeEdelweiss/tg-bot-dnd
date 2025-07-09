@@ -30,6 +30,6 @@ app.use(bot.webhookCallback('/bot'));
 app.listen(process.env.PORT, async () => {
   console.log(`Сервер запущен на порту ${process.env.PORT}`);
   const WebHookUrl = `${process.env.WEBHOOK_DOMAIN}/bot.js`;
-  await bot.telegram.setWebhook(Url);
+  await bot.telegram.setWebhook(WebHookUrl);
   console.log(`Webhook установлен: ${WebHookUrl}`);
 });
