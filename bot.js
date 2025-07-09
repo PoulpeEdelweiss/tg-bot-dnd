@@ -5,8 +5,6 @@ const path = require('path');
 
 dotenv.config();
 
-const _dirname = __dirname;
-
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
 
@@ -29,7 +27,7 @@ bot.start((ctx) => {
 app.use(bot.webhookCallback('/bot'));
 app.listen(process.env.PORT, async () => {
   console.log(`Сервер запущен на порту ${process.env.PORT}`);
-  const WebHookUrl = `${process.env.WEBHOOK_DOMAIN}/bot.js`;
+  const WebHookUrl = `${process.env.WEBHOOK_DOMAIN}/bot`;
   await bot.telegram.setWebhook(WebHookUrl);
   console.log(`Webhook установлен: ${WebHookUrl}`);
 });
